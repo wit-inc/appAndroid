@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionName="exp"
+    tools:context=".Feeds.DetailedPostActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/postContentCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:transitionName="PostExpandCardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/detailPostActionLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/temp_feed"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/detailPostActionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:transitionName="PostExpandActionPanel"
+        android:weightSum="15"
+        app:layout_constraintBottom_toTopOf="@id/commentSectionRV"
+        app:layout_constraintTop_toBottomOf="@id/postContentCV"
+        tools:layout_editor_absoluteX="10dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/like" />
+
+        <TextView
+            android:id="@+id/likeCountTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center|start"
+            android:text=" 55" />
+
+        <ImageView
+            android:id="@+id/commentIB"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/comments" />
+
+        <TextView
+            android:id="@+id/commentCountTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center|start"
+            android:text=" 25" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/share" />
+
+        <TextView
+            android:id="@+id/shareCountTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center|start"
+            android:text=" 10" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/more" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentSectionRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:transitionName="PostExpandComment"
+        app:layout_constraintBottom_toTopOf="@+id/addCommentEV"
+        app:layout_constraintTop_toBottomOf="@id/detailPostActionLayout" />
+
+    <EditText
+        android:id="@+id/addCommentEV"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/post_fragment_background"
+        android:backgroundTint="#ffffff"
+        android:drawableStart="@drawable/ic_profile"
+        android:hint="Add a comment"
+        android:inputType="textMultiLine"
+        android:drawablePadding="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/commentSectionRV" />
+
+    <Button
+        android:layout_width="43dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent"
+        android:text="Post"
+        app:layout_constraintBottom_toBottomOf="@+id/addCommentEV"
+        app:layout_constraintEnd_toEndOf="@+id/addCommentEV"
+        app:layout_constraintTop_toTopOf="@+id/addCommentEV"
+
+        />
+
+    <Space
+        android:id="@+id/navDrawerIB"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="buttonCollapse"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

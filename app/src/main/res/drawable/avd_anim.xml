@@ -1,0 +1,17 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/background">
+
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="1500"
+                android:valueFrom="M 0 0 L 4550 0 L 4550 8060 C 2974 8060 2660 8060 2445 8060 C 2149 8060 2040 8060 1862 8060 C 1427 8060 988 8060 551 8060 C 390 8060 197 8060 1 8060 Z"
+                android:valueTo="M 0 0 L 4550 0 L 4550 523 C 2974 3038.75 2660 3541 2445 3865 C 2149 4310 2040 4448 1862 4602 C 1427 4977 988 5072 551 4885 C 390 4817 197 4680 1 4545 Z"
+                android:valueType="pathType"
+                android:interpolator="@android:anim/accelerate_interpolator"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

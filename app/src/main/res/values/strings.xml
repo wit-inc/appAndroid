@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WIT</string>
+    <string name="title_activity_splash_activity">SplashActivity</string>
+    <string name="title_activity_feeds">FeedsActivity</string>
+    <string name="title_home">Home</string>
+    <string name="messages">Messages</string>
+    <string name="extras">Extras</string>
+    <string name="post">Post</string>
+    <string name="wit_logo">wit logo</string>
+    <string name="profile">Profile</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+</resources>

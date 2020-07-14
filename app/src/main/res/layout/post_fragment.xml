@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/post_fragment_background"
+    android:transitionName="exp"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/profilePhotoIV"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintRight_toLeftOf="@id/profileNameTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profileNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="4dp"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@id/lastSeenTV"
+        app:layout_constraintLeft_toRightOf="@id/profilePhotoIV" />
+
+    <TextView
+        android:id="@+id/lastSeenTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="lastSeen"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/profilePhotoIV"
+        app:layout_constraintTop_toBottomOf="@+id/profileNameTV" />
+
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/postContentCV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/more" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/postContentCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:transitionName="PostExpand"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/profilePhotoIV"
+        app:layout_constraintBottom_toTopOf="@id/addCommentEV"
+        tools:layout_editor_absoluteX="5dp">
+
+        <ImageView
+            android:id="@+id/postContentIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/temp_feed" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/postActionCV"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.9"
+        android:transitionName="PostExpandActionPanel"
+        app:cardBackgroundColor="#F0F0FF"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/postContentCV"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="@id/postContentCV">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:weightSum="9">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/like" />
+
+            <TextView
+                android:id="@+id/likeCountTV"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:text=" 55" />
+
+            <ImageButton
+                android:id="@+id/commentIB"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/comments" />
+
+            <TextView
+                android:id="@+id/commentCountTV"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:text=" 25" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/share" />
+
+            <TextView
+                android:id="@+id/shareCountTV"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="3"
+                android:gravity="center|start"
+                android:text=" 10" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:id="@+id/postEndLine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:transitionName="PostExpandComment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
