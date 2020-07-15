@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionName="exp"
-    tools:context=".Feeds.DetailedPostActivity">
+    tools:context=".Feeds.DetailedFeedActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -37,12 +37,14 @@
         app:layout_constraintTop_toBottomOf="@id/postContentCV"
         tools:layout_editor_absoluteX="10dp">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/likeIB"
             android:layout_width="0dp"
             android:layout_height="32dp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/like" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/likable_selector" />
 
         <TextView
             android:id="@+id/likeCountTV"
@@ -50,14 +52,16 @@
             android:layout_height="32dp"
             android:layout_weight="2"
             android:gravity="center|start"
-            android:text=" 55" />
+            android:text=" 55"
+            />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/commentIB"
             android:layout_width="0dp"
             android:layout_height="32dp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/comments" />
 
         <TextView
@@ -68,11 +72,12 @@
             android:gravity="center|start"
             android:text=" 25" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="0dp"
             android:layout_height="32dp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
             android:src="@drawable/share" />
 
         <TextView
@@ -134,14 +139,6 @@
         app:layout_constraintTop_toTopOf="@+id/addCommentEV"
 
         />
-
-    <Space
-        android:id="@+id/navDrawerIB"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:transitionName="buttonCollapse"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

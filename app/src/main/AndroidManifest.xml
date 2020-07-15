@@ -9,17 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Feeds.DetailedFeedActivity" />
         <activity
-            android:name=".ProfileActivity"
-            android:label="@string/title_activity_profile"></activity>
-        <activity android:name=".Feeds.DetailedPostActivity" />
+            android:name=".SplashActivity" />
         <activity
-            android:name=".SplashActivity"
-            android:label="@string/title_activity_feeds" />
-        <activity
-            android:name=".AuthActivity"
-            android:label="@string/title_activity_splash_activity" />
-        <activity android:name=".Feeds.FeedsActivity">
+            android:name=".AuthActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

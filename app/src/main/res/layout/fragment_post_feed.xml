@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BA000000"
+    android:clickable="true"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".PostFeed.PostFeedFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="167dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:hint="What is on your mind?"
+                android:inputType="textMultiLine"
+                android:padding="4dp"
+                android:paddingEnd="34dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_paper_clip"
+                app:layout_constraintBottom_toTopOf="@+id/tv"
+                app:layout_constraintEnd_toEndOf="@+id/editText" />
+
+            <Button
+                android:id="@+id/tv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="#"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/postFeedBV"
+                app:layout_constraintEnd_toEndOf="@+id/editText" />
+
+            <Button
+                android:id="@+id/postFeedBV"
+                android:layout_width="40dp"
+                android:layout_height="21dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:padding="2dp"
+                android:text="Post"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/post_text_color"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                app:layout_constraintEnd_toEndOf="@+id/editText"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+</LinearLayout>

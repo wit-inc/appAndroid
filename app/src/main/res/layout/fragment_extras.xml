@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="56dp"
+    android:layout_weight="3"
+    android:columnCount="2"
+    android:padding="10dp"
+    android:rowCount="3"
+    tools:context=".Extras.ExtrasFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="Notes"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="Bookmarks"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="3"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="Todo"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="Settings"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="About "
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:text="Help"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</GridLayout>

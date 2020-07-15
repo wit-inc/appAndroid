@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.ch.wit.Feeds.FeedsActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
@@ -32,7 +30,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     public void authUser(View view) {
-        Intent intent = new Intent(this, FeedsActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
