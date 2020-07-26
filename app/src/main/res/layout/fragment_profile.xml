@@ -17,7 +17,7 @@
             android:layout_height="114dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
@@ -74,13 +74,13 @@
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             app:drawableLeftCompat="@drawable/ic_add_friend"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintEnd_toStartOf="@+id/messageIB"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/messageIB"
             android:layout_width="39dp"
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
@@ -96,10 +96,10 @@
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/ic_more"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+            app:layout_constraintBottom_toBottomOf="@+id/messageIB"
             app:layout_constraintEnd_toEndOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="@+id/imageButton" />
+            app:layout_constraintStart_toEndOf="@+id/messageIB"
+            app:layout_constraintTop_toTopOf="@+id/messageIB" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/profilePostRV"

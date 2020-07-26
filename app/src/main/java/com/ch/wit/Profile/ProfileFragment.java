@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.ch.wit.Feeds.DetailedFeedActivity;
-import com.ch.wit.Feeds.PostItemAdapter;
+import com.ch.wit.Adapters.PostItemAdapter;
+import com.ch.wit.MessageFragment;
 import com.ch.wit.R;
 
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +48,19 @@ public class ProfileFragment extends Fragment {
                     button.setText("Friend");
                     button.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_tick, 0, 0, 0);
                 }
+
+            }
+
+
+        });
+
+        ImageButton messageIB = view.findViewById(R.id.messageIB);
+        messageIB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_fragment, new MessageFragment());
+                ft.commit();
 
             }
 

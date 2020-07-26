@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SignUp.SignUpActivity"></activity>
+        <activity
+            android:name=".ui.login.SignUp"
+            android:label="@string/title_activity_sign_up" />
         <activity android:name=".Feeds.DetailedFeedActivity" />
-        <activity
-            android:name=".SplashActivity" />
-        <activity
-            android:name=".AuthActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LogIn.AuthActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -106,9 +106,9 @@
         android:id="@+id/commentSectionRV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
+        android:background="@color/colorSecondaryDark"
         android:transitionName="PostExpandComment"
         app:layout_constraintBottom_toTopOf="@+id/addCommentEV"
         app:layout_constraintTop_toBottomOf="@id/detailPostActionLayout" />
@@ -129,10 +129,12 @@
         app:layout_constraintTop_toBottomOf="@id/commentSectionRV" />
 
     <Button
+        android:id="@+id/postFeedBV"
         android:layout_width="43dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
+        android:textColor="@color/post_text_color"
         android:text="Post"
         app:layout_constraintBottom_toBottomOf="@+id/addCommentEV"
         app:layout_constraintEnd_toEndOf="@+id/addCommentEV"

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/profileNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Crosshairs"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profilePhotoIV"
+        app:layout_constraintTop_toTopOf="@+id/profilePhotoIV" />
+
+    <TextView
+        android:id="@+id/lastSeenTV"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="10 hrs ago"
+        app:layout_constraintBottom_toBottomOf="@+id/profileNameTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toEndOf="@+id/profileNameTV"
+        app:layout_constraintTop_toTopOf="@+id/profileNameTV" />
+
+    <TextView
+        android:id="@+id/commentTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:text="Nice content\n\n\n\n\n\ngood job"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/profilePhotoIV"
+        app:layout_constraintTop_toBottomOf="@+id/profileNameTV" />
+
+    <ImageView
+        android:id="@+id/profilePhotoIV"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gradient_background" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_height="1dp"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/commentTV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/profilePhotoIV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteY="10dp"
+        android:background="@color/colorPrimary"    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

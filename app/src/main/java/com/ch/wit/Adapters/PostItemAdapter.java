@@ -1,4 +1,4 @@
-package com.ch.wit.Feeds;
+package com.ch.wit.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

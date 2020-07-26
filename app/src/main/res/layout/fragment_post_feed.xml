@@ -8,7 +8,8 @@
     android:clickable="true"
     android:gravity="bottom"
     android:orientation="vertical"
-    tools:context=".PostFeed.PostFeedFragment">
+    tools:context=".Post.PostFeedFragment"
+    android:paddingBottom="56dp">
 
 
     <androidx.cardview.widget.CardView
@@ -16,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:padding="8dp"
-        app:cardCornerRadius="15dp">
+        app:cardCornerRadius="15dp"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -79,7 +81,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="56dp" />
+
 </LinearLayout>

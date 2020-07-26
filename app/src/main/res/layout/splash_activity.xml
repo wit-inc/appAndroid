@@ -8,9 +8,12 @@
     tools:context=".SplashActivity">
 
     <ImageView
+        android:id="@+id/logoBV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/main_logo"
         android:layout_gravity="bottom"
-        android:contentDescription="@string/wit_logo" />
+        android:contentDescription="@string/wit_logo"
+        android:src="@drawable/ic_main_logo"
+        android:transitionName="logoSE"
+         />
 </LinearLayout>

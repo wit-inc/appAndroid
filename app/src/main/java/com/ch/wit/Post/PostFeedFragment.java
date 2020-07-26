@@ -1,4 +1,4 @@
-package com.ch.wit.PostFeed;
+package com.ch.wit.Post;
 
 
 import android.os.Bundle;

@@ -1,22 +1,31 @@
 package com.ch.wit.Feeds;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.ch.wit.Adapters.PostItemAdapter;
 import com.ch.wit.R;
+import com.google.android.material.navigation.NavigationView;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class FeedsFragment extends Fragment {
-
+    private DrawerLayout drawer;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         if (parent != null) {
@@ -46,9 +55,26 @@ public class FeedsFragment extends Fragment {
             }
 //
         });
+        NavigationView navigationView = view.findViewById(R.id.nav_view);
+        drawer = view.findViewById(R.id.drawer_layout);
+        Button button = view.findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawer.openDrawer(GravityCompat.END);
+            }
+        });
+
+
         return view;
     }
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
     }
+    @Override
+    public void onDetach() {
+      if(drawer.isDrawerOpen(GravityCompat.END)) drawer.closeDrawer(GravityCompat.END);
+        super.onDetach();
+    }
+
 }
