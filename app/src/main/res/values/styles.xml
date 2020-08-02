@@ -3,6 +3,16 @@
     <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
         <item name="colorAccent">@color/colorPrimaryLight</item>
         <item name="android:windowContentTransitions">true</item>
-    </style>
+<!--        <item name="android:windowSharedElementsUseOverlay">false</item>-->
 
+<!--        <item name="android:windowAllowEnterTransitionOverlap">false</item>-->
+<!--        <item name="android:windowAllowReturnTransitionOverlap">false</item>-->
+
+<!--        <item name="android:windowSharedElementEnterTransition">@android:transition/no_transition</item>-->
+<!--        <item name="android:windowSharedElementExitTransition">@android:transition/no_transition</item>-->
+
+    </style>
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_rounded_corner</item>
+    </style>
 </resources>

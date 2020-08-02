@@ -6,19 +6,39 @@
     android:layout_height="match_parent"
     android:background="#BA000000"
     android:clickable="true"
-    android:gravity="bottom"
+    android:weightSum="8"
     android:orientation="vertical"
-    tools:context=".Post.PostFeedFragment"
-    android:paddingBottom="56dp">
+    tools:context=".Post.PostFeedFragment">
 
+
+    <ImageView
+        android:id="@+id/docIM"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+    <HorizontalScrollView
+        android:id="@+id/docsSV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/docsLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+    </HorizontalScrollView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
         android:layout_margin="8dp"
+        android:layout_weight="2"
         android:padding="8dp"
-        app:cardCornerRadius="15dp"
-        >
+        app:cardCornerRadius="15dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,6 +61,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
+                android:id="@+id/galleryIB"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
@@ -48,6 +69,18 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_paper_clip"
                 app:layout_constraintBottom_toTopOf="@+id/tv"
+                app:layout_constraintEnd_toEndOf="@+id/editText" />
+
+            <ImageButton
+                android:id="@+id/cameraIB"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_camera"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/galleryIB"
                 app:layout_constraintEnd_toEndOf="@+id/editText" />
 
             <Button
@@ -76,8 +109,7 @@
                 android:textAlignment="viewEnd"
                 android:textColor="@color/post_text_color"
                 app:layout_constraintBottom_toBottomOf="@+id/editText"
-                app:layout_constraintEnd_toEndOf="@+id/editText"
-            />
+                app:layout_constraintEnd_toEndOf="@+id/editText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

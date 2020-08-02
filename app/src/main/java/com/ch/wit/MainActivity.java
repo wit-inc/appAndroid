@@ -4,13 +4,11 @@ package com.ch.wit;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.ch.wit.Extras.ExtrasFragment;
 import com.ch.wit.Feeds.FeedsFragment;
 import com.ch.wit.Post.PostFeedFragment;
-import com.ch.wit.Profile.ProfileFragment;
+import com.ch.wit.Profile.UserProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     ft.commit();
                     return true;
                 case R.id.new_post:
-                    ft.replace(R.id.main_fragment, new PostFeedFragment());
+                    ft.add(R.id.main_fragment, new PostFeedFragment());
                     ft.commit();
                     return true;
                 case R.id.message:
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     ft.commit();
                     return true;
                 case R.id.profile:
-                    ft.replace(R.id.main_fragment, new ProfileFragment());
+                    ft.replace(R.id.main_fragment, new UserProfileFragment());
                     ft.commit();
                     return true;
             }
@@ -64,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_fragment);
-        if(fragment != null)
-            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+//        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+//        if(fragment != null)
+//            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
         super.onBackPressed();
         }
     }

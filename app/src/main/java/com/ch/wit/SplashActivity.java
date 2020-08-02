@@ -10,7 +10,7 @@ import android.view.View;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 
-import com.ch.wit.LogIn.AuthActivity;
+import com.ch.wit.authentication.AuthActivity;
 
 public class SplashActivity extends Activity {
 
@@ -21,6 +21,7 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 Pair<View, String> p1 = Pair.create(findViewById(R.id.logoBV), "logoSE");
+//                Pair<View, String> p2 = Pair.create(findViewById(R.id.splashLayout), "splash");
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(SplashActivity.this ,p1);
                 Intent intent = new Intent(SplashActivity.this, AuthActivity.class);
                 startActivity(intent, options.toBundle());

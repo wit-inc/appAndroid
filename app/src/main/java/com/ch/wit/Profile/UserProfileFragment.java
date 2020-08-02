@@ -1,20 +1,9 @@
 package com.ch.wit.Profile;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
-import com.ch.wit.Feeds.DetailedFeedActivity;
-import com.ch.wit.Adapters.PostItemAdapter;
-import com.ch.wit.MessageFragment;
-import com.ch.wit.R;
-import java.util.ArrayList;
-import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityOptionsCompat;
@@ -25,56 +14,73 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ProfileFragment extends Fragment {
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.ch.wit.Adapters.PostItemAdapter;
+import com.ch.wit.Feeds.DetailedFeedActivity;
+import com.ch.wit.MessageFragment;
+import com.ch.wit.R;
+
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class UserProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+        if (parent != null) {
+            parent.removeAllViews();
+        }
+        View view =  inflater.inflate(R.layout.fragment_user_profile, parent, false);
 
-        View view =  inflater.inflate(R.layout.fragment_profile, parent, false);
-
-        Button addFriendBV = view.findViewById(R.id.addFriendBV);
-        addFriendBV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Button button  = (Button) v;
-                Toast.makeText(getContext(), button.getText().toString(), Toast.LENGTH_SHORT).show();
-                if(button.getText().toString().equals("Add friend")){
-                    button.setText("Requested");
-                }
-                if(button.getText().toString().equals("Requested")){
-                    button.setText("Friend");
-                    button.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_tick, 0, 0, 0);
-                }
-
-            }
-
-
-        });
-
-
-        ImageButton messageIB = view.findViewById(R.id.messageIB);
-        messageIB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.add(R.id.main_fragment, new MessageFragment());
-                ft.commit();
-
-            }
-
-
-        });
-        final Fragment me=this;
-        ImageButton backBV = view.findViewById(R.id.backBV);
-        backBV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        Button addFriendBV = view.findViewById(R.id.addFriendBV);
+//        addFriendBV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Button button  = (Button) v;
+//                Toast.makeText(getContext(), button.getText().toString(), Toast.LENGTH_SHORT).show();
+//                if(button.getText().toString().equals("Add friend")){
+//                    button.setText("Requested");
+//                }
+//                if(button.getText().toString().equals("Requested")){
+//                    button.setText("Friend");
+//                    button.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_tick, 0, 0, 0);
+//                }
+//
+//            }
+//
+//
+//        });
+//
+//        ImageButton messageIB = view.findViewById(R.id.messageIB);
+//        messageIB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
 //                FragmentTransaction ft = getFragmentManager().beginTransaction();
-//                 ft.remove(me).commit();
-
-                getActivity().getSupportFragmentManager().popBackStackImmediate();
-            }
-        });
+//                ft.add(R.id.main_fragment, new MessageFragment());
+//                ft.commit();
+//
+//            }
+//
+//
+//        });
+//        ImageButton backBV = view.findViewById(R.id.backBV);
+//        backBV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                Fragment fragment = getFragmentManager().findFragmentById(R.id.main_fragment);
+//                ft.remove(fragment);
+//                ft.addToBackStack(null);
+//                ft.commit();
+//
+//            }
+//        });
 
         ArrayList<Integer> postData = new ArrayList<>();
         postData.add(1);
@@ -86,7 +92,7 @@ public class ProfileFragment extends Fragment {
         PostItemAdapter adapter = new PostItemAdapter(postData ,R.layout.feed_fragment_profile);
 //        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-       recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new PostItemAdapter.ClickListener() {
             @Override
             public void onItemClick(int pos, PostItemAdapter.ViewHolder holder) {
@@ -110,7 +116,7 @@ public class ProfileFragment extends Fragment {
                 arrayAdapter.add("Report");
                 arrayAdapter.add("Bookmark");
                 arrayAdapter.add("Add To Todo");
-               new AlertDialog.Builder(getContext()).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(getContext()).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String strName = arrayAdapter.getItem(which);
@@ -130,6 +136,8 @@ public class ProfileFragment extends Fragment {
 //
         });
         return view;
+
+
 
     }
 

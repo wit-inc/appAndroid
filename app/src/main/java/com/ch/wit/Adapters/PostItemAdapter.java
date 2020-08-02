@@ -1,6 +1,8 @@
 package com.ch.wit.Adapters;
-
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -8,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.Space;
 import android.widget.TextView;
 import com.ch.wit.R;
-import java.util.ArrayList;
+import com.ch.wit.generated.callback.OnClickListener;
+import com.ch.wit.gestures.DoubleClickListener;
 
+import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,9 +21,10 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHolder>{
+public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHolder> {
     private final ArrayList<Integer> postData;
     private final int dir;
+
     public PostItemAdapter(ArrayList<Integer> postData, int dir ) {
         this.dir = dir;
         this.postData = postData;
@@ -37,14 +42,24 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHo
         ViewCompat.setTransitionName(holder.postCardView, "PostExpandCardView");
         ViewCompat.setTransitionName(holder.layout, "exp");
         ViewCompat.setTransitionName(holder.postActionLayout, "PostExpandActionPanel");
-        ViewCompat.setTransitionName(holder.postEndLine,"PostExpandComment");
-        View.OnClickListener onclick = new View.OnClickListener() {
+        ViewCompat.setTransitionName(holder.postEndLine, "PostExpandComment");
+        if (dir == R.layout.feed_fragment) {
+            holder.profilePhotoIV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onProfileClick("profileId");
+                }
+            });
+
+        }
+        holder.commentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 clickListener.onItemClick(holder.getAdapterPosition(), holder);
             }
-        };
-        holder.commentButton.setOnClickListener(onclick);
+        });
+
         holder.likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +67,16 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHo
             }
         });
 
-    }
+        if (holder.moreIB != null) {
+            holder.moreIB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onMoreClick(holder.getAdapterPosition(), holder);
+                }
+            });
+        }
 
+    }
     private static ClickListener clickListener;
     public void setOnItemClickListener(ClickListener clickListener) {
         PostItemAdapter.clickListener = clickListener;
@@ -63,22 +86,24 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHo
         return postData.size();
     }
 
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder  {
+
         public final ImageView postView;
-        final TextView nameView;
-        final TextView lastSeenView;
-        final TextView likeCountView;
-        final TextView commentCountView;
-        final TextView shareCountView;
-        public final CardView postActionLayout;
-        public final CardView postCardView;
+        final TextView nameView, lastSeenView, likeCountView, commentCountView, shareCountView;
+        public final CardView postActionLayout,postCardView;
         public final Space postEndLine;
-        final ImageButton commentButton,likeButton;
+        final ImageButton commentButton,likeButton,moreIB;
         final ConstraintLayout layout;
+        final ImageView profilePhotoIV;
         ViewHolder(View itemView) {
             super(itemView);
+            moreIB = itemView.findViewById(R.id.moreIB);
+            profilePhotoIV = itemView.findViewById(R.id.profilePhotoIV);
             nameView = itemView.findViewById(R.id.profileNameTV);
             lastSeenView = itemView.findViewById(R.id.lastSeenTV);
+
             likeCountView = itemView.findViewById(R.id.likeCountTV);
             commentCountView = itemView.findViewById(R.id.commentCountTV);
             commentButton = itemView.findViewById(R.id.commentIB);
@@ -90,10 +115,13 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.ViewHo
             postEndLine = itemView.findViewById(R.id.postEndLine);
             layout = itemView.findViewById(R.id.postLayout);
         }
+
     }
 
     public interface ClickListener {
         void onItemClick(int position, ViewHolder holder);
+        void onProfileClick(String profileId);
+        void onMoreClick(int adapterPosition, ViewHolder holder);
     }
 
 }

@@ -104,14 +104,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/commentSectionRV"
-        android:layout_width="match_parent"
+        android:layout_width="408dp"
         android:layout_height="0dp"
+        android:background="@color/colorSecondaryDark"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:background="@color/colorSecondaryDark"
         android:transitionName="PostExpandComment"
         app:layout_constraintBottom_toTopOf="@+id/addCommentEV"
-        app:layout_constraintTop_toBottomOf="@id/detailPostActionLayout" />
+        app:layout_constraintTop_toBottomOf="@id/detailPostActionLayout"
+        tools:layout_editor_absoluteX="1dp" />
 
     <EditText
         android:id="@+id/addCommentEV"
@@ -120,13 +121,15 @@
         android:background="@drawable/post_fragment_background"
         android:backgroundTint="#ffffff"
         android:drawableStart="@drawable/ic_profile"
+        android:drawablePadding="5dp"
         android:hint="Add a comment"
         android:inputType="textMultiLine"
-        android:drawablePadding="5dp"
         android:paddingStart="5dp"
         android:paddingEnd="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/commentSectionRV" />
+        app:layout_constraintTop_toBottomOf="@+id/commentSectionRV"
+        app:layout_constraintVertical_bias="0.992"
+        tools:layout_editor_absoluteX="-10dp" />
 
     <Button
         android:id="@+id/postFeedBV"

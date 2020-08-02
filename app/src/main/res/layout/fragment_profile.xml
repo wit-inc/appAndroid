@@ -4,22 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
     tools:context=".Profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/backBV"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="?attr/actionModeCloseDrawable"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/backBV"
+                    android:text="Crosshairs"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp" />
+
+                <ImageButton
+                    android:id="@+id/searchIBV"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:padding="7dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/more" />
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="114dp"
             android:layout_height="114dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:background="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -31,15 +79,15 @@
             android:gravity="center_vertical"
             android:text="Crosshairs10"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/statusEV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:text="Status"
             app:layout_constraintBottom_toTopOf="@+id/profilePostRV"
@@ -86,31 +134,23 @@
             android:layout_marginStart="8dp"
             android:background="@drawable/rounded_corner_background"
             android:src="@drawable/ic_chat"
+            android:tag="0"
             app:layout_constraintBottom_toBottomOf="@+id/addFriendBV"
             app:layout_constraintStart_toEndOf="@+id/addFriendBV"
-            app:layout_constraintTop_toTopOf="@+id/addFriendBV"
-            android:tag="0"/>
-
-        <Spinner
-            android:layout_width="39dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/ic_more"
-            app:layout_constraintBottom_toBottomOf="@+id/messageIB"
-            app:layout_constraintEnd_toEndOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/messageIB"
-            app:layout_constraintTop_toTopOf="@+id/messageIB" />
+            app:layout_constraintTop_toTopOf="@+id/addFriendBV" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/profilePostRV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/statusEV" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

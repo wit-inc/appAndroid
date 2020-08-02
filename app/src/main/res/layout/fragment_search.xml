@@ -3,15 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:paddingTop="20dp"
     tools:context=".Feeds.SearchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:text="Search"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
 
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@drawable/rounded_corner_background"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_corner_textview_background"
         android:goIcon="@drawable/ic_key">
 
     </SearchView>
